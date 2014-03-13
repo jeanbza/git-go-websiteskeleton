@@ -8389,28 +8389,6 @@ th.hidden-lg, td.hidden-lg {
   margin: 0;
 }
 
-code {
-  display: block;
-  white-space: pre-line;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-pre {
-  padding-right: 0;
-  padding-left: 10px;
-  font-size: 10px;
-  line-height: 12px;
-  margin-top: 0;
-  margin-bottom: 10px;
-  max-height: 300px;
-  overflow-y: scroll;
-}
-
-.jdk-blog-post .container, .jdk-blog-post .col-md-4 {
-  padding-left: 0;
-}
-
 .jdk-header {
   border-radius: 0;
   background-color: white;
@@ -8461,25 +8439,6 @@ html, body {
   text-align: center;
   padding-top: 5px;
   border-top: 1px solid #e7e7e7;
-}
-
-.jdk-post .jdk-title {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.jdk-post .jdk-date {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-.jdk-post .jdk-paragraphs .jdk-paragraph {
-  margin-bottom: 10px;
-}
-
-.jdk-showcase {
-  padding-left: 0;
-}
-.jdk-showcase .jdk-leftnav {
-  padding-left: 0;
 }
 
 .jdk-main {
