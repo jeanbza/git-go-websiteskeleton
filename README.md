@@ -1,7 +1,7 @@
 git-go-websiteskeleton
 ===============
 
-A basic website skeleton in Go that comes with Sass, bootstrap, and jQuery.
+A basic website skeleton in Go (or golang, if you prefer) that comes with Sass, bootstrap, and jQuery.
 
 ### You Will Need ###
 1. A go environment http://golang.org/doc/install#install
