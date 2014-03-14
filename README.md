@@ -8,7 +8,7 @@ A basic website skeleton in Go that comes with Sass, bootstrap, and jQuery.
 2. Compass or some other Sass compiler http://compass-style.org/
 3. Some basic knowledge of Go's httpd package. See the excellent gowiki tutorial at http://golang.org/doc/articles/wiki/
 
-### Usage ###
+### Installation ###
 1. cd $GOPATH/src
 2. git clone https://github.com/jadekler/git-go-websiteskeleton.git
 3. cd git-go-websiteskeleton
