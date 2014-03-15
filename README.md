@@ -1,11 +1,11 @@
 git-go-websiteskeleton
 ===============
 
-A basic website skeleton in Go (or golang, if you prefer) that comes with Sass, bootstrap, and jQuery.
+A basic website skeleton in Go (or golang, if you prefer) that comes with the Gorilla Multiplexer, bootstrap, and jQuery.
 
 ### You Will Need ###
 1. A go environment http://golang.org/doc/install#install
-2. Compass or some other Sass compiler http://compass-style.org/
+2. Gorilla mux: go get github.com/gorilla/mux (http://www.gorillatoolkit.org/pkg/mux)
 3. Some basic knowledge of Go's httpd package. See the excellent gowiki tutorial at http://golang.org/doc/articles/wiki/
 
 ### Installation ###

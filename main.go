@@ -1,20 +1,25 @@
 package main
 
 import (
+    "github.com/gorilla/mux"
     "git-go-websiteskeleton/app/home"
-    "git-go-websiteskeleton/app/common"
+    "git-go-websiteskeleton/app/user"
     "net/http"
 )
 
 func main() {
-    http.HandleFunc("/", homePage)
+    r := mux.NewRouter()
+
+    http.Handle("/", r)
+    
+    r.HandleFunc("/", home.GetHomePage).Methods("GET")
+    r.HandleFunc("/user{_:/?}", user.GetHomePage).Methods("GET")
+
+    r.HandleFunc("/user/view/{id:[0-9]+}", user.GetViewPage).Methods("GET")
+    r.HandleFunc("/user/{id:[0-9]+}", user.GetViewPage).Methods("GET")
+
     fileServer := http.StripPrefix("/static/", http.FileServer(http.Dir("static")))
     http.Handle("/static/", fileServer)
 
-    err := http.ListenAndServe(":8080", nil)
-    common.CheckError(err)
-}
-
-func homePage(rw http.ResponseWriter, req *http.Request) {
-    home.GetPage(rw, req)
+    http.ListenAndServe(":8080", nil)
 }

@@ -1,4 +1,4 @@
-package home
+package user
 
 import (
     "net/http"
@@ -9,12 +9,12 @@ func GetHomePage(rw http.ResponseWriter, req *http.Request) {
     type Page struct {
         Title string
     }
-    
+
     p := Page{
-        Title: "home",
+        Title: "user_home",
     }
 
     tmpl := make(map[string]*template.Template)
-    tmpl["home.html"] = template.Must(template.ParseFiles("static/html/home/home.html", "static/html/layout.html"))
-    tmpl["home.html"].ExecuteTemplate(rw, "base", p)
+    tmpl["user_home.html"] = template.Must(template.ParseFiles("static/html/user/home.html", "static/html/layout.html"))
+    tmpl["user_home.html"].ExecuteTemplate(rw, "base", p)
 }
