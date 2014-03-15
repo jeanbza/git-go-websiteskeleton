@@ -15,6 +15,6 @@ func GetHomePage(rw http.ResponseWriter, req *http.Request) {
     }
 
     tmpl := make(map[string]*template.Template)
-    tmpl["home.html"] = template.Must(template.ParseFiles("static/html/home/home.html", "static/html/layout.html"))
+    tmpl["home.html"] = template.Must(template.ParseFiles("templates/home/home.html", "templates/layout.html"))
     tmpl["home.html"].ExecuteTemplate(rw, "base", p)
 }

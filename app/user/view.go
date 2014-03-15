@@ -21,6 +21,6 @@ func GetViewPage(rw http.ResponseWriter, req *http.Request) {
     }
 
     tmpl := make(map[string]*template.Template)
-    tmpl["user_view.html"] = template.Must(template.ParseFiles("static/html/user/view.html", "static/html/layout.html"))
+    tmpl["user_view.html"] = template.Must(template.ParseFiles("templates/user/view.html", "templates/layout.html"))
     tmpl["user_view.html"].ExecuteTemplate(rw, "base", p)
 }
