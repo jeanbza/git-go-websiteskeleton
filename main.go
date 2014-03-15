@@ -1,8 +1,8 @@
 package main
 
 import (
-    "git-go-websiteskeleton/src/home"
-    "git-go-websiteskeleton/src/common"
+    "git-go-websiteskeleton/app/home"
+    "git-go-websiteskeleton/app/common"
     "net/http"
 )
 
