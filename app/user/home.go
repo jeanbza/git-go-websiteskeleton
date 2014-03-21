@@ -3,6 +3,8 @@ package user
 import (
     "net/http"
     "html/template"
+    
+    "git-go-websiteskeleton/app/common"
 )
 
 func GetHomePage(rw http.ResponseWriter, req *http.Request) {
@@ -14,7 +16,7 @@ func GetHomePage(rw http.ResponseWriter, req *http.Request) {
         Title: "user_home",
     }
 
-    tmpl := make(map[string]*template.Template)
-    tmpl["user_home.html"] = template.Must(template.ParseFiles("templates/user/home.html", "templates/layout.html"))
-    tmpl["user_home.html"].ExecuteTemplate(rw, "base", p)
+    common.Templates = template.Must(template.ParseFiles("templates/user/home.html", common.LayoutPath))
+    err := common.Templates.ExecuteTemplate(rw, "base", p)
+    common.CheckError(err)
 }

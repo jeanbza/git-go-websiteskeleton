@@ -3,6 +3,9 @@ package user
 import (
     "net/http"
     "html/template"
+
+    "git-go-websiteskeleton/app/common"
+
     "github.com/gorilla/mux"
 )
 
@@ -20,7 +23,7 @@ func GetViewPage(rw http.ResponseWriter, req *http.Request) {
         UserId: userId,
     }
 
-    tmpl := make(map[string]*template.Template)
-    tmpl["user_view.html"] = template.Must(template.ParseFiles("templates/user/view.html", "templates/layout.html"))
-    tmpl["user_view.html"].ExecuteTemplate(rw, "base", p)
+    common.Templates = template.Must(template.ParseFiles("templates/user/view.html", common.LayoutPath))
+    err := common.Templates.ExecuteTemplate(rw, "base", p)
+    common.CheckError(err)
 }

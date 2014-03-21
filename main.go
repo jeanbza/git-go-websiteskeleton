@@ -1,10 +1,12 @@
 package main
 
 import (
-    "github.com/gorilla/mux"
+    "net/http"
+
     "git-go-websiteskeleton/app/home"
     "git-go-websiteskeleton/app/user"
-    "net/http"
+
+    "github.com/gorilla/mux"
 )
 
 func main() {
