@@ -1,17 +1,14 @@
 package common
 
 import (
-	"fmt"
-	// "os"
+    "log"
+    "runtime"
 )
 
 func CheckError(err error) {
     if err != nil {
-        ReportError(err)
-        // os.Exit(1)
+        var stack [4096]byte
+        runtime.Stack(stack[:], false)
+        log.Printf("%q\n%s\n", err, stack[:])
     }
-}
-
-func ReportError(err error) {
-    fmt.Println("Fatal error caught by common.CheckError: ", err.Error())
 }
