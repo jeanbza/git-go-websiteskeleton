@@ -13,6 +13,10 @@ import (
 
 var router *mux.Router
 
+const (
+    accessLogging = true
+)
+
 func main() {
     router = mux.NewRouter()
     http.HandleFunc("/", httpInterceptor)
@@ -48,5 +52,7 @@ func httpInterceptor(w http.ResponseWriter, req *http.Request) {
     finishTime := time.Now()
     elapsedTime := finishTime.Sub(startTime)
 
-    common.LogAccess(w, req, elapsedTime)
+    if (accessLogging) {
+        common.LogAccess(w, req, elapsedTime)
+    }
 }
