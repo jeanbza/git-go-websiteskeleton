@@ -15,3 +15,6 @@ A basic website skeleton in Go (or golang, if you prefer) that comes with the Go
 4. go build main.go
 5. ./main
 6. Navigate to http://localhost:8080
+
+### Access Logging ###
+Access logging is turned on by default, and will (also) by default write to git-go-websiteskeleton/access_log.txt. You can turn access logging on/off in main.go. You can change the location of this log at app/common/access_log.go.
