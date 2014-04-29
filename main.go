@@ -13,10 +13,6 @@ import (
 
 var router *mux.Router
 
-const (
-    accessLogging = true
-)
-
 func main() {
     router = mux.NewRouter()
     http.HandleFunc("/", httpInterceptor)
