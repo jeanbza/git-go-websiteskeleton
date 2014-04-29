@@ -48,7 +48,5 @@ func httpInterceptor(w http.ResponseWriter, req *http.Request) {
     finishTime := time.Now()
     elapsedTime := finishTime.Sub(startTime)
 
-    if (accessLogging) {
-        common.LogAccess(w, req, elapsedTime)
-    }
+    common.LogAccess(w, req, elapsedTime)
 }
