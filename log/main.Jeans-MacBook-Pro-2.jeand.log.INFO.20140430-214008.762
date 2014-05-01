@@ -1,0 +1,5 @@
+Log file created at: 2014/04/30 21:40:08
+Running on machine: Jeans-MacBook-Pro-2
+Binary: Built with gc go1.2 for darwin/386
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0430 21:40:08.484398 00762 access_log.go:48] [01/Jan/0001 12:00:00] [::1] HTTP/1.1 GET: / (load time: 0.00083 seconds)

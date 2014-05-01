@@ -3,17 +3,22 @@ package main
 import (
     "net/http"
     "time"
+    "flag"
 
     "git-go-websiteskeleton/app/common"
     "git-go-websiteskeleton/app/home"
     "git-go-websiteskeleton/app/user"
 
     "github.com/gorilla/mux"
+    "github.com/golang/glog"
 )
 
 var router *mux.Router
 
 func main() {
+    flag.Parse()
+    defer glog.Flush()
+
     router = mux.NewRouter()
     http.HandleFunc("/", httpInterceptor)
 
@@ -27,17 +32,6 @@ func main() {
     http.Handle("/static/", fileServer)
 
     http.ListenAndServe(":8080", nil)
-}
-
-type ApacheLogRecord struct {
-    http.ResponseWriter
- 
-    ip                    string
-    time                  time.Time
-    method, uri, protocol string
-    status                int
-    responseBytes         int64
-    elapsedTime           time.Duration
 }
 
 func httpInterceptor(w http.ResponseWriter, req *http.Request) {
