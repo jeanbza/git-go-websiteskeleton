@@ -20,7 +20,7 @@ A basic website skeleton in Go (or golang, if you prefer) that comes with the Go
 ### Logging ###
 This project contains access and error logging. By default, these logs will be placed in your system's temp folder (on most *nix machines, this is /tmp; on mac, it's /private/var/gobbledegook). To change the log dir, simply run main with -log_dir="/path/to/dir", as in ./main -log_dir="/path/to/dir". If you decide to change the log location (which I recommend), you are in charge of cleaning your log dir periodically. The program's log library (glog) will handle max file sizes, but multiple logs will not be cleaned automatically.
 
-Some more info on what's capture:
+Some more info on what gets captured:
 - Access logging captures each request served, logging the requestor's IP, the request method, uri, and protocol, the time
 requested, and the page load time.
 - Error logging captures the time, error, and a stack trace.
