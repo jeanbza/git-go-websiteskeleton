@@ -17,8 +17,10 @@ A basic website skeleton in Go (or golang, if you prefer) that comes with the Go
 5. ./main
 6. Navigate to http://localhost:8080
 
-### Access Logging ###
-Access logging captures each request served, logging the requestor's IP, the request method, uri, and protocol, the time
-requested, and the page load time. Logs are written to the default temp directory for your OS (this should be /tmp for most *nix environments, though on Darwin (mac) this may be /private/vars). The temporary directory may be modified by changing $TMP.
+### Logging ###
+This project contains access and error logging. By default, these logs will be placed in your system's temp folder (on most *nix machines, this is /tmp; on mac, it's /private/var/gobbledegook). To change the log dir, simply run main with -log_dir="/path/to/dir", as in ./main -log_dir="/path/to/dir". If you decide to change the log location (which I recommend), you are in charge of cleaning your log dir periodically. The program's log library (glog) will handle max file sizes, but multiple logs will not be cleaned automatically.
 
-To specify a specific directory to log to, add -log_dir="/path/to/dir", as in ./main -log_dir="path/to/dir". Please note: on Darwin this does not seem to work reliably. Note also that if your log is not set to /tmp, you have to take care of cleaning up log files yourself (as in they may start to pile up, whereas /tmp is periodically erased by *nix systems automatically).
+Some more info on what gets captured:
+- Access logging captures each request served, logging the requestor's IP, the request method, uri, and protocol, the time
+requested, and the page load time.
+- Error logging captures the time, error, and a stack trace.
