@@ -29,4 +29,4 @@ requested, and the page load time.
 
 
 ### What if I want to use Secure Headers? ###
-This doesn't come with the default package, but feel free to check out and implement things like http://godoc.org/github.com/kr/secureheader.
+This doesn't come with the default skeleton, but feel free to check out and implement things like http://godoc.org/github.com/kr/secureheader (which are very easy to get up and running!).
