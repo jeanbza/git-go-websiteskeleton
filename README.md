@@ -26,3 +26,7 @@ Some more info on what gets captured:
 - Access logging captures each request served, logging the requestor's IP, the request method, uri, and protocol, the time
 requested, and the page load time.
 - Error logging captures the time, error, and a stack trace.
+
+
+### What if I want to use Secure Headers? ###
+This doesn't come with the default package, but feel free to check out and implement things like http://godoc.org/github.com/kr/secureheader.
