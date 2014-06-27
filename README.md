@@ -27,7 +27,7 @@ Some more info on what gets captured:
 requested, and the page load time.
 - Error logging captures the time, error, and a stack trace.
 
-Note: On *nix systems, you can also set the TMPDIR environment variable to specify default output location.
+Note: on *nix systems, you can also set the TMPDIR environment variable to specify default output location.
 
 ### What if I want to use Secure Headers? ###
 This doesn't come with the default skeleton, but feel free to check out and implement things like http://godoc.org/github.com/kr/secureheader (which are very easy to get up and running!).
