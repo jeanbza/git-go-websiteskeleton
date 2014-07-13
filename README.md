@@ -13,9 +13,8 @@ A basic website skeleton in Go (or golang, if you prefer) that comes with the Go
 1. cd $GOPATH/src
 2. git clone https://github.com/jadekler/git-go-websiteskeleton.git
 3. cd git-go-websiteskeleton
-4. go build main.go
-5. ./main
-6. Navigate to http://localhost:8080
+4. go run main.go
+5. Navigate to http://localhost:8080
 
 Note: To make it your own project, simply remove the .git file from the project and upload it into your own repository.
 
