@@ -35,6 +35,7 @@ func main() {
 }
 
 func httpInterceptor(w http.ResponseWriter, req *http.Request) {
+    defer glog.Flush()
     startTime := time.Now()
 
     router.ServeHTTP(w, req)
@@ -42,5 +43,12 @@ func httpInterceptor(w http.ResponseWriter, req *http.Request) {
     finishTime := time.Now()
     elapsedTime := finishTime.Sub(startTime)
 
-    common.LogAccess(w, req, elapsedTime, http.StatusOK)
+    switch req.Method {
+    case "GET":
+        // We may not always want to StatusOK, but for the sake of 
+        // this example we will
+        common.LogAccess(w, req, elapsedTime, http.StatusOK)
+    case "POST":
+        // here we might use http.StatusCreated
+    }
 }
