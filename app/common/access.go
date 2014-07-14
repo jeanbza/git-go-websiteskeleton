@@ -15,15 +15,12 @@ const (
 )
 
 type accessLog struct {
-    ip                    string
-    time                  time.Time
-    method, uri, protocol string
-    status                int
-    responseBytes         int64
-    elapsedTime           time.Duration
+    ip, method, uri, protocol, host     string
+    status                              int
+    elapsedTime                         time.Duration
 }
 
-func LogAccess(w http.ResponseWriter, req *http.Request, duration time.Duration) {
+func LogAccess(w http.ResponseWriter, req *http.Request, duration time.Duration, status int) {
     clientIP := req.RemoteAddr
 
     if colon := strings.LastIndex(clientIP, ":"); colon != -1 {
@@ -32,11 +29,11 @@ func LogAccess(w http.ResponseWriter, req *http.Request, duration time.Duration)
 
     record := &accessLog{
         ip:             clientIP,
-        time:           time.Time{},
         method:         req.Method,
         uri:            req.RequestURI,
         protocol:       req.Proto,
-        status:         http.StatusOK,
+        host:           req.Host,
+        status:         status,
         elapsedTime:    duration,
     }
 
@@ -44,6 +41,6 @@ func LogAccess(w http.ResponseWriter, req *http.Request, duration time.Duration)
 }
 
 func writeAccessLog(record *accessLog) {
-    logRecord := "["+record.time.Format("02/Jan/2006 03:04:05")+"] "+record.ip+" "+record.protocol+" "+record.method+": "+record.uri+" (load time: "+strconv.FormatFloat(record.elapsedTime.Seconds(), 'f', 5, 64)+" seconds)"
+    logRecord := record.ip+" "+record.protocol+" "+record.method+": "+record.uri+", host: "+record.host+" (load time: "+strconv.FormatFloat(record.elapsedTime.Seconds(), 'f', 5, 64)+" seconds)"
     glog.Infoln(logRecord)
 }
