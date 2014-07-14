@@ -13,9 +13,8 @@ A basic website skeleton in Go (or golang, if you prefer) that comes with the Go
 1. cd $GOPATH/src
 2. git clone https://github.com/jadekler/git-go-websiteskeleton.git
 3. cd git-go-websiteskeleton
-4. go build main.go
-5. ./main
-6. Navigate to http://localhost:8080
+4. go run main.go
+5. Navigate to http://localhost:8080
 
 Note: To make it your own project, simply remove the .git file from the project and upload it into your own repository.
 
@@ -26,3 +25,8 @@ Some more info on what gets captured:
 - Access logging captures each request served, logging the requestor's IP, the request method, uri, and protocol, the time
 requested, and the page load time.
 - Error logging captures the time, error, and a stack trace.
+
+Note: on *nix systems, you can also set the TMPDIR environment variable to specify default output location.
+
+### What if I want to use Secure Headers? ###
+This doesn't come with the default skeleton, but feel free to check out and implement things like http://godoc.org/github.com/kr/secureheader (which are very easy to get up and running!).
