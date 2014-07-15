@@ -18,5 +18,5 @@ func GetHomePage(rw http.ResponseWriter, req *http.Request) {
 
     common.Templates = template.Must(template.ParseFiles("templates/home/home.html", common.LayoutPath))
     err := common.Templates.ExecuteTemplate(rw, "base", p)
-    common.CheckError(err)
+    common.CheckError(err, 2)
 }
