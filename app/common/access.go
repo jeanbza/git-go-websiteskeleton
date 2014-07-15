@@ -16,11 +16,10 @@ const (
 
 type accessLog struct {
     ip, method, uri, protocol, host     string
-    status                              int
     elapsedTime                         time.Duration
 }
 
-func LogAccess(w http.ResponseWriter, req *http.Request, duration time.Duration, status int) {
+func LogAccess(w http.ResponseWriter, req *http.Request, duration time.Duration) {
     clientIP := req.RemoteAddr
 
     if colon := strings.LastIndex(clientIP, ":"); colon != -1 {
@@ -33,7 +32,6 @@ func LogAccess(w http.ResponseWriter, req *http.Request, duration time.Duration,
         uri:            req.RequestURI,
         protocol:       req.Proto,
         host:           req.Host,
-        status:         status,
         elapsedTime:    duration,
     }
 

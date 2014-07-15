@@ -46,7 +46,7 @@ func httpInterceptor(w http.ResponseWriter, req *http.Request) {
     case "GET":
         // We may not always want to StatusOK, but for the sake of 
         // this example we will
-        common.LogAccess(w, req, elapsedTime, http.StatusOK)
+        common.LogAccess(w, req, elapsedTime)
     case "POST":
         // here we might use http.StatusCreated
     }
