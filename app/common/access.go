@@ -43,4 +43,5 @@ func LogAccess(w http.ResponseWriter, req *http.Request, duration time.Duration,
 func writeAccessLog(record *accessLog) {
     logRecord := ""+record.ip+" "+record.protocol+" "+record.method+": "+record.uri+", host: "+record.host+" (load time: "+strconv.FormatFloat(record.elapsedTime.Seconds(), 'f', 5, 64)+" seconds)"
     glog.Infoln(logRecord)
+    glog.Flush()
 }

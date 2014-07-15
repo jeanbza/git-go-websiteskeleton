@@ -35,7 +35,6 @@ func main() {
 }
 
 func httpInterceptor(w http.ResponseWriter, req *http.Request) {
-    defer glog.Flush()
     startTime := time.Now()
 
     router.ServeHTTP(w, req)

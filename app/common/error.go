@@ -14,5 +14,6 @@ func CheckError(err error) {
         log.Printf("%q\n%s\n", err, stack[:])
 
         glog.V(3).Infoln("%q\n%s\n", err)
+        glog.Flush()
     }
 }
