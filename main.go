@@ -38,7 +38,8 @@ func httpInterceptor(router http.Handler) http.Handler {
 
         router.ServeHTTP(w, req)
 
-        elapsedTime := time.Now().Sub(startTime)
+        finishTime := time.Now()
+        elapsedTime := finishTime.Sub(startTime)
 
         switch req.Method {
         case "GET":
