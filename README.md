@@ -11,5 +11,6 @@ The related grunt modules:
 ### Installation and Usage
 
 1. `npm install`
-1. `go run main.go`
-1. (in a separate window) `grunt`
+1. `grunt`
+
+Any changes made to a .go file will now cause grunt to restart your go program.
