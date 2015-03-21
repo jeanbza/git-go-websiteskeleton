@@ -7,14 +7,16 @@ A basic website skeleton in Go (or golang, if you prefer) that comes with the Go
 1. A go environment http://golang.org/doc/install#install
 2. Gorilla mux: go get github.com/gorilla/mux (http://www.gorillatoolkit.org/pkg/mux)
 3. glog: go get github.com/golang/glog
-4. Some basic knowledge of Go's httpd package. See the excellent gowiki tutorial at http://golang.org/doc/articles/wiki/
+4. httpscerts: github.com/kabukky/httpscerts
+5. secureheader: go get github.com/kr/secureheader
+6. Some basic knowledge of Go's httpd package. See the excellent gowiki tutorial at http://golang.org/doc/articles/wiki/
 
 ### Installation ###
 1. cd $GOPATH/src
 2. git clone https://github.com/jadekler/git-go-websiteskeleton.git
 3. cd git-go-websiteskeleton
 4. go run main.go
-5. Navigate to http://localhost:8080
+5. Navigate to https://localhost:8080
 
 Note: To make it your own project, simply remove the .git file from the project and upload it into your own repository.
 
@@ -28,5 +30,5 @@ requested, and the page load time.
 
 Note: on *nix systems, you can also set the TMPDIR environment variable to specify default output location.
 
-### What if I want to use Secure Headers? ###
-This doesn't come with the default skeleton, but feel free to check out and implement things like http://godoc.org/github.com/kr/secureheader (which are very easy to get up and running!).
+## TLS connection ###
+Currently this skeleton is created for TLS connection and using auto-created certificate. Just create/replace key.pem and cert.pem  with your own if you want to use real certificate. These files are not ander Git control.
