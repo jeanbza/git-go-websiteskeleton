@@ -11,6 +11,9 @@ import (
 
     "github.com/golang/glog"
     "github.com/gorilla/mux"
+
+    "github.com/kabukky/httpscerts"
+    "github.com/kr/secureheader"
 )
 
 func main() {
@@ -29,7 +32,13 @@ func main() {
     fileServer := http.StripPrefix("/static/", http.FileServer(http.Dir("static")))
     http.Handle("/static/", fileServer)
 
-    http.ListenAndServe(":8080", nil)
+    err := httpscerts.Check("cert.pem", "key.pem")
+    // If they are not available, generate new ones.
+    if err != nil {
+        httpscerts.Generate("cert.pem", "key.pem", "127.0.0.1:8080")
+    }
+
+    http.ListenAndServeTLS(":8080", "cert.pem", "key.pem", secureheader.DefaultConfig)
 }
 
 func httpInterceptor(router http.Handler) http.Handler {

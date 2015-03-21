@@ -2,3 +2,5 @@
 access_log.txt
 main
 !main.go
+key.pem
+cert.pem
