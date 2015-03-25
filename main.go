@@ -1,6 +1,7 @@
 package main
 
 import (
+    "fmt"
     "flag"
     "net/http"
     "time"
@@ -29,7 +30,11 @@ func main() {
     fileServer := http.StripPrefix("/static/", http.FileServer(http.Dir("static")))
     http.Handle("/static/", fileServer)
 
-    http.ListenAndServe(":8080", nil)
+    err := http.ListenAndServe(":8080", nil)
+
+    if err != nil {
+        fmt.Println(err)
+    }
 }
 
 func httpInterceptor(router http.Handler) http.Handler {
