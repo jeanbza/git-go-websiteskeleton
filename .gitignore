@@ -2,3 +2,4 @@
 access_log.txt
 main
 !main.go
+.idea/
