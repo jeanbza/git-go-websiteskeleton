@@ -40,7 +40,5 @@ requested, and the page load time.
 Note: on *nix systems, you can also set the TMPDIR environment variable to specify default
 output location.
 
-### What if I want to use Secure Headers? ###
-This doesn't come with the default skeleton, but feel free to check out and implement
-things like http://godoc.org/github.com/kr/secureheader (which are very easy to get up
-and running!).
+### What if I want to use HTTPS? 
+Check out [this fantastic blog post by kaihag](http://www.kaihag.com/https-and-go/).
