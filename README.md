@@ -1,7 +1,7 @@
 git-go-websiteskeleton
 ===============
 
-A basic website skeleton in Go (or golang, if you prefer) that comes with the Gorilla
+A basic website skeleton in Go that comes with the Gorilla
 Multiplexer for routing, glog for access and error logging, as well as jquery, bootstrap,
 and font-awesome for making excellent web apps.
 
